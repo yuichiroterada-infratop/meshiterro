@@ -18,6 +18,9 @@
           <!--ルーティングのpathなので、_pathの前はrails routesで確認-->
         </li>
         <li>
+          <%= link_to "マイページ", user_path(current_user.id) %>
+        </li>
+        <li>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
