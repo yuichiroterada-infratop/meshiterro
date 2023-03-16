@@ -13,7 +13,7 @@
 
 <div>
   <p>コメント件数：<%= @post_image.post_comments.count %></p>
-  <%= @post_image.post_comments.each do |post_comment| %>
+  <% @post_image.post_comments.each do |post_comment| %>
     <p><%= image_tag post_comment.user.get_profile_image(100,100) %></p>
     <%= post_comment.user.name %>
     <%= post_comment.created_at.strftime("%y/%m/%d") %>
