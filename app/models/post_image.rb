@@ -4,6 +4,11 @@ class PostImage < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  #shop_nameが存在しているかのバリデーション
+  validates :shop_name, presence: true
+  #imageが存在しているかのバリデーション
+  validates :image, presence: true
+
   def get_image
     unless image.attached?  #imageが存在しない時
       file_path = Rails.root.join("app/assets/images/no_image.jpg")
